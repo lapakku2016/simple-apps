@@ -1,11 +1,14 @@
 # MENENTUKAN IMAGE
 FROM node:18.16
 
-# PERINTAH YANG DIJALANKAN
-RUN apt update -y && npm install
+# WORKDIR
+WORKDIR /app
 
 # COPY FILE TO IMAGE
 ADD . /app
+
+# PERINTAH YANG DIJALANKAN
+RUN apt update -y && npm install
 
 # MAINTAINER IMAGE
 LABEL email="jeryporezer@gmail.com"
